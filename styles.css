@@ -1,0 +1,277 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font: inherit;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+/* button, */
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+  --clr-primary-dark: #1f2937;
+  --clr-primary-light: #f9faf8;
+  --clr-secondary-light: #e5e7eb;
+  --clr-accent: #3882f6; /*color for buttons, border, CTA*/
+  --pg-width-main: 60%;
+  --pg-width-center: 50%;
+  --fs-xsmall: 1rem; /* 16px*/
+  --fs-small: 1.125rem; /* 18px*/
+  --fs-medium: 1.5rem; /* 24px*/
+  --fs-large: 2.25rem; /* 36px*/
+  --fs-xlarge: 3rem; /* 48px*/
+}
+
+body {
+  margin: 0em;
+  line-height: 1.5;
+  font-family: sans-serif;
+}
+
+/* HEADER SECTION ////////////////////////////////////////////////////////////  */
+
+header {
+  background: var(--clr-primary-dark);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: var(--pg-width-main);
+  flex-wrap: wrap;
+  margin-top: var(--fs-xsmall);
+  padding-bottom: var(--fs-xlarge);
+}
+
+nav.nav {
+  flex-wrap: wrap;
+  display: flex;
+  column-gap: var(--fs-medium);
+}
+
+a {
+  text-decoration: none;
+}
+
+a.logo {
+  font-size: var(--fs-medium);
+  color: var(--clr-primary-light);
+  font-weight: 700;
+}
+
+a.navlink {
+  font-size: var(--fs-small);
+  color: var(--clr-secondary-light);
+  flex-shrink: 0;
+}
+
+/* HERO SECTION //////////////////////////////////////////////////////////////  */
+section.hero {
+  background-color: var(--clr-primary-dark);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding-bottom: 96px;
+  padding-top: 48px
+}
+
+.hero__container {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: var(--pg-width-main);
+  /* flex-wrap: wrap; */
+}
+
+.hero__wrapper {
+  flex-basis: 40%;
+}
+.hero__title {
+  color: var(--clr-primary-light);
+  font-size: var(--fs-xlarge);
+  font-weight: bolder;
+}
+
+.hero__text {
+  color: var(--clr-secondary-light);
+  font-size: var(--fs-small);
+}
+
+.hero__image {
+  display: flex;
+  height: 45%;
+  width: 45%;
+}
+
+.signup__btn {
+  background-color: var(--clr-accent);
+  border: 1px solid var(--clr-primary-light);
+  color: var(--clr-primary-light);
+  padding: 0.5rem 2rem;
+  margin: 2rem 0rem 0rem 0rem;
+  border-radius: 0.5rem;
+  flex-shrink: 0;
+  font-size: var(--fs-xsmall);
+}
+
+/* OTHER INFO SECTION //////////////////////////////////////////////////////// */
+.column-img {
+  height: 175px;
+  width: 175px;
+  border: 2px solid var(--clr-accent);
+  border-radius: 10%;
+}
+
+.info__title {
+  color: var(--clr-primary-dark);
+  font-size: 2.25rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 32px 0px 32px 0px;
+}
+
+.info__container {
+  display: flex;
+  justify-content: center;
+  gap: 64px;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.info__item {
+  color: var(--clr-primary-dark);
+  flex-basis: 200px;
+  text-align: center;
+  font-size: var(--fs-small);
+  margin: 0px 0px 96px 0px;
+  flex-shrink: 0;
+}
+
+/* QUOTE SECTION  ///////////////////////////////////////////////////////////  */
+section.quote {
+  background-color: var(--clr-secondary-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote__container {
+  max-width: var(--pg-width-center);
+  margin: 64px 0px 96px 0px;
+}
+
+.quote__txt {
+  font-size: var(--fs-large);
+  font-weight: 100;
+  font-style: italic;
+}
+
+.quote__cite {
+  font-size: var(--fs-xsmall);
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* CALL TO ACTION SECTION  ///////////////////////////////////////////////////  */
+section.cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 64px 0px 64px 0px;
+  color: var(--clr-secondary-light);
+}
+
+.cta__container {
+  background-color: var(--clr-accent);
+  border-radius: 10px;
+  display: flex;
+  flex-basis: var(--pg-width-main);
+  justify-content: center;
+  column-gap: 128px;
+  padding: 48px 16px 48px 16px;
+  flex-wrap: wrap;
+}
+
+.cta__wrapper {
+}
+
+.cta__title {
+  font-size: var(--fs-medium);
+  font-weight: bolder;
+  color: var(--clr-primary-light);
+}
+
+.cta__copy {
+  border: 4px solid lawngreen;
+}
+
+/* FOOTER SECTION  //////////////////////////////////////////////////////////  */
+.footer__container {
+  background-color: var(--clr-primary-dark);
+  color: var(--clr-secondary-light);
+  min-height: 5rem;
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+  
+}
